@@ -1,0 +1,24 @@
+# New Houses Project
+
+This project is used to compare houses and allow users to vote on which one they like better.
+
+## Features
+- View and vote on different houses
+- Elo ranking system to score houses
+- Firebase integration for backend
+
+## Getting Started
+
+To get started with the project, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/yourusername/newhouses.git`
+2. Install dependencies: `npm install`
+3. Create a `.env` file with your Firebase API keys.
+
+## Contributing
+
+If you'd like to contribute to the project, please submit a pull request or file an issue.
+
+## License
+
+This project is licensed under the MIT License.
