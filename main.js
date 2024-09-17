@@ -1,18 +1,21 @@
-// Load environment variables from .env if running locally (Node.js environment)
-if (typeof process !== 'undefined' && process.env.NODE_ENV !== 'production') {
-    const dotenv = require('dotenv');
-    dotenv.config();
-}
-
-// Use process.env for local development, otherwise use Vercel's environment
+// Firebase configuration using environment variables (prefixed with NEXT_PUBLIC_)
 const firebaseConfig = {
-    apiKey: process.env.FIREBASE_API_KEY || __VERCEL_ENV__FIREBASE_API_KEY,
-    authDomain: process.env.FIREBASE_AUTH_DOMAIN || __VERCEL_ENV__FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.FIREBASE_PROJECT_ID || __VERCEL_ENV__FIREBASE_PROJECT_ID,
-    storageBucket: process.env.FIREBASE_STORAGE_BUCKET || __VERCEL_ENV__FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID || __VERCEL_ENV__FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.FIREBASE_APP_ID || __VERCEL_ENV__FIREBASE_APP_ID,
-    measurementId: process.env.FIREBASE_MEASUREMENT_ID || __VERCEL_ENV__FIREBASE_MEASUREMENT_ID
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+    measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
 console.log("Firebase Config:", firebaseConfig);
+
+// Example usage: initialize Firebase (if not already initialized)
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+} else {
+    firebase.app(); // If already initialized, use the existing app instance
+}
+
+// Additional Firebase operations can go here...
