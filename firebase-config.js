@@ -1,4 +1,4 @@
-// Import Firebase modules from the CDN (works in the browser without a bundler)
+// Import Firebase modules from the CDN (browser-friendly)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
 
 // Firebase configuration using environment variables
@@ -12,17 +12,12 @@ const firebaseConfig = {
     measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
-// Initialize Firebase
+// Initialize Firebase app
 let firebaseApp = null;
 
-function getFirebaseApp() {
+export function getFirebaseApp() {
     if (!firebaseApp) {
         firebaseApp = initializeApp(firebaseConfig);
     }
     return firebaseApp;
 }
-
-// Now, you can use getFirebaseApp() to access Firebase in other parts of the same file
-console.log("Firebase app initialized:", getFirebaseApp());
-
-// Add your application logic below
