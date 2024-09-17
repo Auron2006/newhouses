@@ -24,7 +24,7 @@ If you'd like to contribute to the project, please submit a pull request or file
 This project is licensed under the MIT License.
 
 git add . 
-git commit -m "Add Firebase configuration and environment setup"
+git commit -m "Added backend in vercel and environment setup"
 git push origin main
 
 set up decent backend with vercel, run script in backend, do the same for openai / groq key 
