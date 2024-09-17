@@ -22,3 +22,7 @@ If you'd like to contribute to the project, please submit a pull request or file
 ## License
 
 This project is licensed under the MIT License.
+
+git add . 
+git commit -m "Add Firebase configuration and environment setup"
+git push origin main
